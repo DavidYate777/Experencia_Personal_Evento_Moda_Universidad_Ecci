@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Glossary — Moda ECCI 2026</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <style>
+    .gloss-letter {
+      font-family: var(--display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: rgba(201,168,76,.12);
+      line-height: 1;
+      margin-bottom: .3rem;
+    }
+    .gloss-card {
+      background: var(--gris-card);
+      border: 1px solid rgba(201,168,76,.1);
+      padding: 1.6rem;
+      height: 100%;
+      transition: border-color .25s, transform .25s;
+    }
+    .gloss-card:hover {
+      border-color: rgba(201,168,76,.38);
+      transform: translateY(-3px);
+    }
+    .gloss-card .en-term {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--blanco);
+      margin-bottom: .2rem;
+    }
+    .gloss-card .es-term {
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-bottom: .7rem;
+    }
+    .gloss-card .definition {
+      font-size: .83rem;
+      color: var(--texto-sec);
+      line-height: 1.78;
+    }
+    .tag-badge {
+      display: inline-block;
+      font-size: .58rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--negro);
+      background: var(--dorado);
+      padding: .15rem .55rem;
+      margin-top: .7rem;
+    }
+    /* Category filter pills */
+    .cat-pill {
+      background: transparent;
+      border: 1px solid rgba(201,168,76,.22);
+      color: var(--texto-sec);
+      font-size: .65rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: .38rem 1rem;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .cat-pill.active, .cat-pill:hover { border-color: var(--dorado); color: var(--dorado); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Moda <span>ECCI</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiencia</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="bilingue.html">Bilingüe</a></li>
+        <li class="nav-item"><a class="nav-link active" href="glosario.html">Glossary</a></li>
+        <li class="nav-item"><a class="nav-link" href="sostenibilidad.html">Sostenibilidad</a></li>
+        <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — foto Werner/historia del color: académica y rica en contenido, perfecta para glosario -->
+<section class="page-hero hero-sm">
+  <div class="hero-bg-img"
+       style="background-image:url('assets/img/Foto_5-Conferencia-Teoria-del-Color.jpeg');
+              background-position:center;"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Technical Vocabulary · 2026</p>
+    <h1 class="hero-title">Technical <em>Glossary</em></h1>
+    <p class="hero-sub">18 términos · Color, Diseño & Tecnología</p>
+  </div>
+</section>
+
+<!-- GLOSARIO PRINCIPAL -->
+<section class="sec">
+  <div class="container">
+
+    <div class="row align-items-end mb-4 g-3 reveal">
+      <div class="col-lg-6">
+        <p class="eyebrow">Vocabulary</p>
+        <h2 class="sec-title">Términos aprendidos <em>en el evento</em></h2>
+        <div class="gold-rule"></div>
+        <p class="sec-lead">
+          Mínimo 15 términos técnicos en inglés relacionados con color, diseño, UX/UI
+          y tecnología — con traducción al español y definición completa.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <input
+          type="text"
+          id="glossaryFilter"
+          class="gloss-input"
+          placeholder="Search term / Buscar término..."
+        />
+        <div class="d-flex flex-wrap gap-2" id="catFilters">
+          <button class="cat-pill active" data-cat="all">All (18)</button>
+          <button class="cat-pill" data-cat="color">Color (7)</button>
+          <button class="cat-pill" data-cat="design">Design/UX (6)</button>
+          <button class="cat-pill" data-cat="tech">Technology (5)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla de escritorio -->
+    <div class="d-none d-md-block reveal" style="overflow-x:auto">
+      <table class="gloss-table">
+        <thead>
+          <tr>
+            <th>English Term</th>
+            <th>Español</th>
+            <th>Definition</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody id="glossaryBody">
+          <tr data-cat="color">
+            <td>Color Theory</td>
+            <td>Teoría del Color</td>
+            <td>Study of how colors generate visual perception, emotion and meaning in design, art and communication contexts. Includes concepts like hue, saturation, value and harmony.</td>
+            <td><span class="tag-badge">Color</span></td>
+          </tr>
+          <tr data-cat="color">
+            <td>Pantone</td>
+            <td>Pantone</td>
+            <td>Internationally standardized color identification system used by designers, printers and manufacturers to ensure color consistency across different materials and media.</td>
+            <td><span class="tag-badge">Color</span></td>
+          </tr>
+          <tr data-cat="color">
+            <td>Semiology</td>
+            <td>Semiología</td>
+            <td>Study of signs and symbols and their role in cultural and visual communication. In design, it explains how colors function as signs that carry specific cultural meanings.</td>
+            <td><span class="tag-badge">Color</span></td>
+          </tr>
+          <tr data-cat="color">
+            <td>Color Palette</td>
+            <td>Paleta de Colores</td>
+            <td>A curated set of colors selected and combined to achieve visual harmony and communicate a specific brand identity, emotion or aesthetic in a design project.</td>
+            <td><span class="tag-badge">Color</span></td>
+          </tr>
+          <tr data-cat="color">
+            <td>Color Harmony</td>
+            <td>Armonía del Color</td>
+            <td>Pleasing arrangement of colors based on their positions on the color wheel. Types include complementary, analogous, triadic and square harmonies, used widely in UI design.</td>
+            <td><span class="tag-badge">Color</span></td>
+          </tr>
+          <tr data-cat="color">
+            <td>Hue</td>
+            <td>Matiz</td>
+            <td>The pure attribute of a color identified by its position on the visible spectrum (red, yellow, blue, etc.). It is the property that distinguishes one color family from another.</td>
+            <td><span class="tag-badge">Color</span></td>
+          </tr>
+          <tr data-cat="color">
+            <td>Saturation</td>
+            <td>Saturación</td>
+            <td>The intensity or purity of a color. A fully saturated color appears vivid and bright, while a desaturated color appears muted, grayish or washed out.</td>
+            <td><span class="tag-badge">Color</span></td>
+          </tr>
+          <tr data-cat="design">
+            <td>UX Design</td>
+            <td>Diseño de Experiencia de Usuario</td>
+            <td>Process of designing products and digital environments that provide meaningful, accessible and relevant experiences. Focuses on user needs, behavior and interaction flows.</td>
+            <td><span class="tag-badge">Design</span></td>
+          </tr>
+          <tr data-cat="design">
+            <td>UI Design</td>
+            <td>Diseño de Interfaz de Usuario</td>
+            <td>Discipline focused on the visual and interactive elements of digital products: buttons, typography, spacing, iconography, color and layout that the user directly sees and touches.</td>
+            <td><span class="tag-badge">Design</span></td>
+          </tr>
+          <tr data-cat="design">
+            <td>Visual Hierarchy</td>
+            <td>Jerarquía Visual</td>
+            <td>Arrangement and presentation of design elements that guides the viewer's eye through content in order of importance, using size, color, contrast and position as tools.</td>
+            <td><span class="tag-badge">Design</span></td>
+          </tr>
+          <tr data-cat="design">
+            <td>Brand Identity</td>
+            <td>Identidad de Marca</td>
+            <td>The complete set of visual and conceptual elements that differentiate a brand: logo, color palette, typography, tone of voice and imagery that convey its personality and values.</td>
+            <td><span class="tag-badge">Design</span></td>
+          </tr>
+          <tr data-cat="design">
+            <td>Typography</td>
+            <td>Tipografía</td>
+            <td>Art and technique of arranging typefaces to make written content legible, readable and visually appealing. Includes choices of font family, weight, size, spacing and alignment.</td>
+            <td><span class="tag-badge">Design</span></td>
+          </tr>
+          <tr data-cat="design">
+            <td>Accessibility</td>
+            <td>Accesibilidad</td>
+            <td>Design principle ensuring that digital products are usable by people of all abilities and disabilities. Includes sufficient color contrast, keyboard navigation and screen reader support.</td>
+            <td><span class="tag-badge">Design</span></td>
+          </tr>
+          <tr data-cat="tech">
+            <td>Responsive Design</td>
+            <td>Diseño Responsive</td>
+            <td>Web design approach that creates interfaces that adapt fluidly to different screen sizes, from mobile phones to large desktop monitors, ensuring a consistent user experience.</td>
+            <td><span class="tag-badge">Tech</span></td>
+          </tr>
+          <tr data-cat="tech">
+            <td>Grid System</td>
+            <td>Sistema de Rejilla</td>
+            <td>Structural framework used in design and web development to organize content in consistent, aligned columns and rows. Bootstrap's 12-column grid is a widely used implementation.</td>
+            <td><span class="tag-badge">Tech</span></td>
+          </tr>
+          <tr data-cat="tech">
+            <td>Circular Economy</td>
+            <td>Economía Circular</td>
+            <td>Economic model focused on eliminating waste through continuous use of resources — reusing, repairing, refurbishing and recycling products and materials to extend their lifecycle.</td>
+            <td><span class="tag-badge">Tech</span></td>
+          </tr>
+          <tr data-cat="tech">
+            <td>Sustainable Design</td>
+            <td>Diseño Sostenible</td>
+            <td>Design approach that minimizes environmental impact while maximizing usability, longevity and ethical responsibility throughout a product's lifecycle, from creation to disposal.</td>
+            <td><span class="tag-badge">Tech</span></td>
+          </tr>
+          <tr data-cat="tech">
+            <td>GitHub Pages</td>
+            <td>GitHub Pages</td>
+            <td>Free static site hosting service provided by GitHub that allows developers to publish web projects directly from a repository. Used here to deploy this academic portfolio publicly.</td>
+            <td><span class="tag-badge">Tech</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Cards para mobile -->
+    <div class="d-md-none row g-3 reveal" id="glossCards">
+      <!-- Las mismas entradas en cards para mobile -->
+      <div class="col-12" data-cat="color"><div class="gloss-card"><div class="en-term">Color Theory</div><div class="es-term">Teoría del Color</div><div class="definition">Study of how colors generate visual perception, emotion and meaning in design, art and communication contexts.</div><span class="tag-badge">Color</span></div></div>
+      <div class="col-12" data-cat="color"><div class="gloss-card"><div class="en-term">Pantone</div><div class="es-term">Pantone</div><div class="definition">Internationally standardized color identification system used by designers and manufacturers to ensure color consistency.</div><span class="tag-badge">Color</span></div></div>
+      <div class="col-12" data-cat="color"><div class="gloss-card"><div class="en-term">Semiology</div><div class="es-term">Semiología</div><div class="definition">Study of signs and symbols and their role in cultural and visual communication — how colors carry specific cultural meanings.</div><span class="tag-badge">Color</span></div></div>
+      <div class="col-12" data-cat="color"><div class="gloss-card"><div class="en-term">Color Palette</div><div class="es-term">Paleta de Colores</div><div class="definition">Curated set of colors selected to achieve visual harmony and communicate a specific brand identity or aesthetic.</div><span class="tag-badge">Color</span></div></div>
+      <div class="col-12" data-cat="color"><div class="gloss-card"><div class="en-term">Color Harmony</div><div class="es-term">Armonía del Color</div><div class="definition">Pleasing arrangement of colors based on the color wheel: complementary, analogous, triadic and square harmonies.</div><span class="tag-badge">Color</span></div></div>
+      <div class="col-12" data-cat="color"><div class="gloss-card"><div class="en-term">Hue</div><div class="es-term">Matiz</div><div class="definition">Pure attribute of a color identified by its position on the visible spectrum (red, yellow, blue, etc.).</div><span class="tag-badge">Color</span></div></div>
+      <div class="col-12" data-cat="color"><div class="gloss-card"><div class="en-term">Saturation</div><div class="es-term">Saturación</div><div class="definition">Intensity or purity of a color. Fully saturated = vivid. Desaturated = muted or grayish.</div><span class="tag-badge">Color</span></div></div>
+      <div class="col-12" data-cat="design"><div class="gloss-card"><div class="en-term">UX Design</div><div class="es-term">Diseño de Experiencia de Usuario</div><div class="definition">Process of designing products that provide meaningful, accessible experiences focused on user needs and behavior.</div><span class="tag-badge">Design</span></div></div>
+      <div class="col-12" data-cat="design"><div class="gloss-card"><div class="en-term">UI Design</div><div class="es-term">Diseño de Interfaz de Usuario</div><div class="definition">Discipline focused on the visual and interactive elements: buttons, typography, spacing, color and layout.</div><span class="tag-badge">Design</span></div></div>
+      <div class="col-12" data-cat="design"><div class="gloss-card"><div class="en-term">Visual Hierarchy</div><div class="es-term">Jerarquía Visual</div><div class="definition">Arrangement of design elements guiding the viewer's eye through content in order of importance.</div><span class="tag-badge">Design</span></div></div>
+      <div class="col-12" data-cat="design"><div class="gloss-card"><div class="en-term">Brand Identity</div><div class="es-term">Identidad de Marca</div><div class="definition">Complete set of visual elements that differentiate a brand: logo, palette, typography and tone of voice.</div><span class="tag-badge">Design</span></div></div>
+      <div class="col-12" data-cat="design"><div class="gloss-card"><div class="en-term">Typography</div><div class="es-term">Tipografía</div><div class="definition">Art of arranging typefaces to make content legible and visually appealing — font family, weight, size and spacing.</div><span class="tag-badge">Design</span></div></div>
+      <div class="col-12" data-cat="design"><div class="gloss-card"><div class="en-term">Accessibility</div><div class="es-term">Accesibilidad</div><div class="definition">Design principle ensuring digital products are usable by people of all abilities, including sufficient color contrast.</div><span class="tag-badge">Design</span></div></div>
+      <div class="col-12" data-cat="tech"><div class="gloss-card"><div class="en-term">Responsive Design</div><div class="es-term">Diseño Responsive</div><div class="definition">Web design approach creating interfaces that adapt to different screen sizes from mobile to desktop.</div><span class="tag-badge">Tech</span></div></div>
+      <div class="col-12" data-cat="tech"><div class="gloss-card"><div class="en-term">Grid System</div><div class="es-term">Sistema de Rejilla</div><div class="definition">Structural framework organizing content in columns and rows. Bootstrap's 12-column grid is a key example.</div><span class="tag-badge">Tech</span></div></div>
+      <div class="col-12" data-cat="tech"><div class="gloss-card"><div class="en-term">Circular Economy</div><div class="es-term">Economía Circular</div><div class="definition">Economic model eliminating waste through continuous reuse, repair and recycling to extend product lifecycle.</div><span class="tag-badge">Tech</span></div></div>
+      <div class="col-12" data-cat="tech"><div class="gloss-card"><div class="en-term">Sustainable Design</div><div class="es-term">Diseño Sostenible</div><div class="definition">Design approach minimizing environmental impact while maximizing usability and ethical responsibility.</div><span class="tag-badge">Tech</span></div></div>
+      <div class="col-12" data-cat="tech"><div class="gloss-card"><div class="en-term">GitHub Pages</div><div class="es-term">GitHub Pages</div><div class="definition">Free static site hosting by GitHub for publishing web projects directly from a repository.</div><span class="tag-badge">Tech</span></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">Moda <span>ECCI</span></div>
+        <p class="footer-text mt-2">Actividad académica — SENA ADSO · Regional Distrito Capital · 2026</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <p class="footer-heading">Páginas</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="experiencia.html">Experiencia</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="bilingue.html">Bilingüe</a></li>
+          <li><a href="glosario.html">Glossary</a></li>
+          <li><a href="sostenibilidad.html">Sostenibilidad</a></li>
+          <li><a href="referencias.html">Referencias</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <p class="footer-heading">Última sección</p>
+        <p style="font-size:.88rem;color:var(--texto-sec);margin-bottom:1rem">
+          Cierra el recorrido con la reflexión sobre sostenibilidad y economía circular.
+        </p>
+        <a href="sostenibilidad.html" class="btn-outline-gold">Ver Sostenibilidad →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">SENA ADSO · Moda ECCI · Bogotá, Colombia · 2026</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/translate.js"></script>
+<script>
+  /* ── Category filter ──────────────────────── */
+  document.getElementById('catFilters').addEventListener('click', e => {
+    if (!e.target.classList.contains('cat-pill')) return;
+    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    e.target.classList.add('active');
+    const cat = e.target.dataset.cat;
+
+    /* tabla */
+    document.querySelectorAll('#glossaryBody tr').forEach(row => {
+      row.style.display = (cat === 'all' || row.dataset.cat === cat) ? '' : 'none';
+    });
+    /* cards mobile */
+    document.querySelectorAll('#glossCards [data-cat]').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+  });
+
+  /* ── Text search ──────────────────────────── */
+  document.getElementById('glossaryFilter').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('#glossaryBody tr').forEach(row => {
+      row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+    document.querySelectorAll('#glossCards > div').forEach(card => {
+      card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>

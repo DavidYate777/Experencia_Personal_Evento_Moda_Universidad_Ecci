@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Galería — Moda ECCI 2026</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <style>
+    /* Lightbox overlay */
+    #lightbox {
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,.92); align-items:center; justify-content:center;
+    }
+    #lightbox.open { display:flex; }
+    #lightbox img {
+      max-width:90vw; max-height:88vh;
+      object-fit:contain; display:block;
+      border:1px solid rgba(201,168,76,.25);
+    }
+    #lightbox-close {
+      position:absolute; top:1.5rem; right:1.8rem;
+      color:var(--dorado); font-size:2rem; cursor:pointer;
+      line-height:1; background:none; border:none;
+    }
+    #lightbox-caption {
+      position:absolute; bottom:1.5rem; left:50%;
+      transform:translateX(-50%);
+      font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+      color:var(--dorado); background:rgba(12,12,12,.8);
+      padding:.4rem 1.2rem; white-space:nowrap;
+    }
+    .filter-btn {
+      background:transparent; border:1px solid rgba(201,168,76,.25);
+      color:var(--texto-sec); font-size:.68rem; letter-spacing:.18em;
+      text-transform:uppercase; padding:.45rem 1.2rem; cursor:pointer;
+      transition:all .2s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active { border-color:var(--dorado); color:var(--dorado); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Moda <span>ECCI</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiencia</a></li>
+        <li class="nav-item"><a class="nav-link active" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="bilingue.html">Bilingüe</a></li>
+        <li class="nav-item"><a class="nav-link" href="glosario.html">Glossary</a></li>
+        <li class="nav-item"><a class="nav-link" href="sostenibilidad.html">Sostenibilidad</a></li>
+        <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — foto armonías de color: vibrante, perfecta para galería -->
+<section class="page-hero hero-sm">
+  <div class="hero-bg-img"
+       style="background-image:url('assets/img/Foto_4-Conferencia-Teoria-del-Color.jpeg');
+              background-position:center;"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Registro Visual · 2026</p>
+    <h1 class="hero-title">Galería del <em>Evento</em></h1>
+    <p class="hero-sub">10 fotografías · Conferencia & Stands de Moda</p>
+  </div>
+</section>
+
+<!-- CAROUSEL — Conferencia (5 fotos) -->
+<section class="sec">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Categoría 01</p>
+      <h2 class="sec-title">Conferencia — <em>Teoría del Color</em></h2>
+      <div class="gold-rule"></div>
+      <p class="sec-lead mb-4">
+        Cinco momentos capturados durante la conferencia de Sara Viloria: desde las muestras
+        Pantone hasta las diapositivas históricas sobre Werner, Vermeer y las armonías del color.
+      </p>
+    </div>
+
+    <div id="carouselConferencia" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="4500">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselConferencia" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselConferencia" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselConferencia" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#carouselConferencia" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#carouselConferencia" data-bs-slide-to="4"></button>
+      </div>
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="assets/img/Foto_1-Conferencia-Teoria-del-Color.jpeg"
+               alt="Diapositiva: Color + Apellido + Sensación — muestras Pantone"
+               style="object-position:center;"/>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Color + Apellido + Sensación</h5>
+            <p>Sara Viloria explica cómo el color se vincula con recuerdos y emociones personales a través del sistema Pantone</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/Foto_2-Conferencia-Teoria-del-Color.jpeg"
+               alt="Diapositiva: El color es el lugar donde el cerebro y el universo se encuentran — Paul Klee"
+               style="object-position:center;"/>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>"El color es donde el cerebro y el universo se encuentran"</h5>
+            <p>Paul Klee — moodboard de color en moda, arte y diseño proyectado durante la conferencia</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/Foto_3-Conferencia-Teoria-del-Color.jpeg"
+               alt="Diapositiva: historia del azul ultramarino — pigmentos históricos"
+               style="object-position:center;"/>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>El precio del color en la historia</h5>
+            <p>Referencia al ultramarino y los pigmentos históricos que tuvieron implicaciones económicas y políticas</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/Foto_4-Conferencia-Teoria-del-Color.jpeg"
+               alt="Diapositiva: Armonías de Color — complementarios, triada, análogos, cuadrado, rectángulo"
+               style="object-position:center;"/>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Armonías del Color</h5>
+            <p>Complementarios, triadas, análogos y cuadrados — principios directamente aplicables al diseño de interfaces</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/Foto_5-Conferencia-Teoria-del-Color.jpeg"
+               alt="Diapositiva: Nomenclatura del Color de Werner — historia de clasificación cromática"
+               style="object-position:center;"/>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>La Nomenclatura del Color de Werner (1814)</h5>
+            <p>Uno de los primeros sistemas científicos de clasificación cromática — antecedente de los sistemas digitales RGB y HEX</p>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselConferencia" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselConferencia" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- STANDS — Carousel + info -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Categoría 02</p>
+      <h2 class="sec-title">Stands de <em>Moda</em></h2>
+      <div class="gold-rule"></div>
+      <p class="sec-lead mb-4">
+        Cuatro stands, cuatro identidades visuales completamente distintas. Cada uno demostró
+        cómo el color, los materiales y la composición construyen un mensaje sin palabras.
+      </p>
+    </div>
+
+    <div id="carouselStands" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselStands" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselStands" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselStands" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#carouselStands" data-bs-slide-to="3"></button>
+      </div>
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="assets/img/Foto_1-Stands-Moda.jpeg"
+               alt="Estatua clásica femenina — stand entrada ECCI, mármol y tejidos"
+               style="object-position:center top;"/>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Clasicismo como punto de partida</h5>
+            <p>Estatua de mármol que ancla la propuesta en la historia de la moda — paleta de grises y crema</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/Foto_2-Stands-Moda.jpeg"
+               alt="Stand Homenaje al Mar — maniquíes con vestidos celestes y blancos"
+               style="object-position:center;"/>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Homenaje al Mar</h5>
+            <p>Azul cielo, blanco y plata — semiología del agua aplicada a la moda. Sensación de ligereza y pureza</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/Foto_3-Stands-Moda.jpeg"
+               alt="Stand botánico — velos blancos con hojas de eucalipto y maniquí artístico de madera"
+               style="object-position:center;"/>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Naturaleza & Arte Textil</h5>
+            <p>Velos blancos, eucalipto y oro — narrativa de pureza orgánica. El color verde comunica vida y equilibrio</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/Foto_4-Stands-Moda.jpeg"
+               alt="Stand Y2K — CDs iridiscentes, maniquíes con prendas rosadas y lila"
+               style="object-position:center;"/>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Y2K Neo-Kitsch</h5>
+            <p>CDs, rosado y lila iridiscente — la nostalgia digital como estética. El color como ironía y pop culture</p>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselStands" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselStands" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- GRID FILTRABLE — todas las fotos -->
+<section class="sec">
+  <div class="container">
+    <div class="text-center reveal">
+      <p class="eyebrow">Colección Completa</p>
+      <h2 class="sec-title">Todas las <em>Fotografías</em></h2>
+      <div class="gold-rule center"></div>
+      <p class="sec-lead mx-auto mb-4" style="max-width:520px">
+        Haz clic en una foto para verla en grande. Usa los filtros para navegar por categoría.
+      </p>
+    </div>
+
+    <!-- Botones de filtro -->
+    <div class="d-flex gap-2 justify-content-center flex-wrap mb-4 reveal">
+      <button class="filter-btn active" data-filter="all">Todas (10)</button>
+      <button class="filter-btn" data-filter="conferencia">Conferencia (5)</button>
+      <button class="filter-btn" data-filter="stands">Stands (4)</button>
+      <button class="filter-btn" data-filter="inicio">Inicio (1)</button>
+    </div>
+
+    <!-- Grid de fotos -->
+    <div class="foto-grid reveal" id="photoGrid">
+
+      <div class="foto-grid-item" data-category="conferencia"
+           data-src="assets/img/Foto_1-Conferencia-Teoria-del-Color.jpeg"
+           data-caption="Color + Apellido + Sensación — Pantone">
+        <img src="assets/img/Foto_1-Conferencia-Teoria-del-Color.jpeg"
+             alt="Pantone chips en la conferencia"/>
+        <div class="tag">Conferencia</div>
+      </div>
+
+      <div class="foto-grid-item" data-category="conferencia"
+           data-src="assets/img/Foto_2-Conferencia-Teoria-del-Color.jpeg"
+           data-caption="Paul Klee — Moodboard del Color">
+        <img src="assets/img/Foto_2-Conferencia-Teoria-del-Color.jpeg"
+             alt="Moodboard y cita Paul Klee"/>
+        <div class="tag">Conferencia</div>
+      </div>
+
+      <div class="foto-grid-item" data-category="stands"
+           data-src="assets/img/Foto_1-Stands-Moda.jpeg"
+           data-caption="Estatua clásica — Stand entrada ECCI">
+        <img src="assets/img/Foto_1-Stands-Moda.jpeg"
+             alt="Estatua clásica stand moda ECCI"
+             style="object-position:center top"/>
+        <div class="tag">Stands</div>
+      </div>
+
+      <div class="foto-grid-item" data-category="stands"
+           data-src="assets/img/Foto_2-Stands-Moda.jpeg"
+           data-caption="Homenaje al Mar — azules y blancos">
+        <img src="assets/img/Foto_2-Stands-Moda.jpeg"
+             alt="Stand Homenaje al Mar"/>
+        <div class="tag">Stands</div>
+      </div>
+
+      <div class="foto-grid-item" data-category="conferencia"
+           data-src="assets/img/Foto_3-Conferencia-Teoria-del-Color.jpeg"
+           data-caption="El precio del color — ultramarino e historia">
+        <img src="assets/img/Foto_3-Conferencia-Teoria-del-Color.jpeg"
+             alt="Historia del color — pigmentos históricos"/>
+        <div class="tag">Conferencia</div>
+      </div>
+
+      <div class="foto-grid-item" data-category="stands"
+           data-src="assets/img/Foto_3-Stands-Moda.jpeg"
+           data-caption="Naturaleza & Arte Textil — velos y eucalipto">
+        <img src="assets/img/Foto_3-Stands-Moda.jpeg"
+             alt="Stand botánico velos blancos"/>
+        <div class="tag">Stands</div>
+      </div>
+
+      <div class="foto-grid-item" data-category="conferencia"
+           data-src="assets/img/Foto_4-Conferencia-Teoria-del-Color.jpeg"
+           data-caption="Armonías del Color — complementarios y triadas">
+        <img src="assets/img/Foto_4-Conferencia-Teoria-del-Color.jpeg"
+             alt="Armonías de color en la conferencia"/>
+        <div class="tag">Conferencia</div>
+      </div>
+
+      <div class="foto-grid-item" data-category="stands"
+           data-src="assets/img/Foto_4-Stands-Moda.jpeg"
+           data-caption="Y2K Neo-Kitsch — CDs y rosado iridiscente">
+        <img src="assets/img/Foto_4-Stands-Moda.jpeg"
+             alt="Stand Y2K CDs y prendas rosadas"/>
+        <div class="tag">Stands</div>
+      </div>
+
+      <div class="foto-grid-item" data-category="conferencia"
+           data-src="assets/img/Foto_5-Conferencia-Teoria-del-Color.jpeg"
+           data-caption="Nomenclatura del Color de Werner (1814)">
+        <img src="assets/img/Foto_5-Conferencia-Teoria-del-Color.jpeg"
+             alt="Historia nomenclatura del color Werner"/>
+        <div class="tag">Conferencia</div>
+      </div>
+
+      <div class="foto-grid-item" data-category="inicio"
+           data-src="assets/img/Foto-Inicio-Pagina.jpeg"
+           data-caption="Entrada al evento — aprendiz con estatua ECCI">
+        <img src="assets/img/Foto-Inicio-Pagina.jpeg"
+             alt="Aprendiz con estatua en la ECCI"
+             style="object-position:30% 30%"/>
+        <div class="tag">Inicio</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Cerrar">×</button>
+  <img id="lightbox-img" src="" alt=""/>
+  <div id="lightbox-caption"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">Moda <span>ECCI</span></div>
+        <p class="footer-text mt-2">Actividad académica — SENA ADSO · Regional Distrito Capital · 2026</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <p class="footer-heading">Páginas</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="experiencia.html">Experiencia</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="bilingue.html">Bilingüe</a></li>
+          <li><a href="glosario.html">Glossary</a></li>
+          <li><a href="sostenibilidad.html">Sostenibilidad</a></li>
+          <li><a href="referencias.html">Referencias</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <p class="footer-heading">Siguiente sección</p>
+        <p style="font-size:.88rem;color:var(--texto-sec);margin-bottom:1rem">
+          Lee el contenido de la conferencia en español e inglés en la sección bilingüe.
+        </p>
+        <a href="bilingue.html" class="btn-outline-gold">Contenido Bilingüe →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">SENA ADSO · Moda ECCI · Bogotá, Colombia · 2026</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/translate.js"></script>
+<script>
+  /* ── Filtro de fotos ──────────────────────────── */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.foto-grid-item').forEach(item => {
+        const match = filter === 'all' || item.dataset.category === filter;
+        item.style.display = match ? '' : 'none';
+      });
+    });
+  });
+
+  /* ── Lightbox ─────────────────────────────────── */
+  const lb     = document.getElementById('lightbox');
+  const lbImg  = document.getElementById('lightbox-img');
+  const lbCap  = document.getElementById('lightbox-caption');
+  const lbClose= document.getElementById('lightbox-close');
+
+  document.querySelectorAll('.foto-grid-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lbImg.src = item.dataset.src;
+      lbImg.alt = item.querySelector('img').alt;
+      lbCap.textContent = item.dataset.caption || '';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>

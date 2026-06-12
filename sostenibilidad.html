@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sostenibilidad — Moda ECCI 2026</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <style>
+    .circle-stat {
+      width: 120px; height: 120px;
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      margin: 0 auto;
+      transition: border-color .3s;
+    }
+    .circle-stat:hover { border-color: var(--dorado); }
+    .circle-stat .num {
+      font-family: var(--display);
+      font-size: 2rem; font-weight: 300;
+      color: var(--dorado); line-height: 1;
+    }
+    .circle-stat .lbl {
+      font-size: .55rem; letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--texto-sec);
+      text-align: center;
+      padding: 0 .4rem;
+      margin-top: .2rem;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 1.2rem;
+      padding-bottom: 2.2rem;
+      position: relative;
+    }
+    .timeline-item:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 21px; top: 44px;
+      width: 1px; bottom: 0;
+      background: rgba(201,168,76,.18);
+    }
+    .tl-dot {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(201,168,76,.4);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      background: var(--gris-card);
+    }
+    .tl-dot svg { width: 18px; height: 18px; color: var(--dorado); }
+    .tl-body h5 {
+      font-family: var(--display);
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--blanco); margin-bottom: .4rem;
+    }
+    .tl-body p { font-size: .85rem; color: var(--texto-sec); line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Moda <span>ECCI</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiencia</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="bilingue.html">Bilingüe</a></li>
+        <li class="nav-item"><a class="nav-link" href="glosario.html">Glossary</a></li>
+        <li class="nav-item"><a class="nav-link active" href="sostenibilidad.html">Sostenibilidad</a></li>
+        <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — stand botánico: verde, orgánico, perfecto para sostenibilidad -->
+<section class="page-hero hero-sm">
+  <div class="hero-bg-img"
+       style="background-image:url('assets/img/Foto_3-Stands-Moda.jpeg');
+              background-position:center;"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Conclusión & Reflexión · 2026</p>
+    <h1 class="hero-title">Tecnología, <em>Sostenibilidad</em><br>y Economía Circular</h1>
+    <p class="hero-sub">Responsabilidad ambiental en la era digital</p>
+  </div>
+</section>
+
+<!-- INTRO REFLEXIÓN -->
+<section class="sec">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5 reveal">
+        <p class="eyebrow">Reflexión de Cierre</p>
+        <h2 class="sec-title">La moda y el código <em>comparten responsabilidad</em></h2>
+        <div class="gold-rule"></div>
+        <p class="sec-lead mb-4">
+          Moda ECCI 2026 no fue solo un evento de diseño: fue una invitación a repensar cómo
+          producimos, consumimos y descartamos — tanto en la industria textil como en la
+          industria del software.
+        </p>
+        <p class="sec-lead">
+          La economía circular, la sostenibilidad y la responsabilidad organizacional no son
+          temas ajenos a los programadores. Son principios que debemos integrar desde la
+          primera línea de código hasta el despliegue final de cada aplicación.
+        </p>
+      </div>
+      <div class="col-lg-7 reveal d1">
+        <div class="quote-block">
+          "El color a lo largo de la historia ha tenido un precio y unas implicaciones que
+          han jugado papeles fundamentales en la vida humana. Hoy, con el desarrollo de las
+          mejores tecnologías, se está perdiendo esa originalidad que caracterizaba el color
+          mismo. Como programadores, tenemos la responsabilidad de recuperar esa autenticidad
+          en cada interfaz que construimos."
+          <div class="quote-attr">— Reflexión personal · Moda ECCI 2026</div>
+        </div>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem">
+          <div class="circle-stat">
+            <span class="num" data-count="6">0</span>
+            <span class="lbl">Principios<br>Sostenibles</span>
+          </div>
+          <div class="circle-stat">
+            <span class="num" data-count="0" data-suffix="%">0</span>
+            <span class="lbl">Residuos con<br>Código Limpio</span>
+          </div>
+          <div class="circle-stat">
+            <span class="num" data-count="100" data-suffix="%">0</span>
+            <span class="lbl">Open Source<br>Deployment</span>
+          </div>
+          <div class="circle-stat">
+            <span class="num" data-count="2026">0</span>
+            <span class="lbl">Año del<br>Compromiso</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE: principios de economía circular aplicados -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5 reveal">
+        <p class="eyebrow">Economía Circular</p>
+        <h2 class="sec-title">Los 6 principios <em>aplicados al desarrollo</em></h2>
+        <div class="gold-rule"></div>
+        <p class="sec-lead mb-4">
+          La economía circular no es solo un concepto de la industria textil. Sus principios
+          tienen un equivalente directo en cómo construimos software sostenible y responsable.
+        </p>
+        <!-- Foto del stand Y2K — CDs reciclados como metáfora de economía circular -->
+        <div style="overflow:hidden;position:relative;margin-top:1rem">
+          <img src="assets/img/Foto_4-Stands-Moda.jpeg"
+               alt="Stand Y2K — CDs reutilizados como decoración, metáfora de economía circular"
+               style="width:100%;height:260px;object-fit:cover;object-position:center;filter:brightness(.75);display:block;transition:transform .5s"
+               onmouseover="this.style.transform='scale(1.03)'"
+               onmouseout="this.style.transform='scale(1)'"/>
+          <div style="position:absolute;bottom:.9rem;left:.9rem;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dorado);background:rgba(12,12,12,.78);padding:.25rem .7rem">
+            CDs reutilizados — Stand Moda ECCI 2026
+          </div>
+        </div>
+        <p style="font-size:.78rem;color:var(--texto-sec);margin-top:.8rem;line-height:1.7">
+          Este stand utilizó CDs reciclados como elemento decorativo — un ejemplo directo de
+          economía circular aplicada a la moda.
+        </p>
+      </div>
+
+      <div class="col-lg-7 reveal d1">
+        <div class="timeline-item">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.99"/></svg>
+          </div>
+          <div class="tl-body">
+            <h5>Reutilización</h5>
+            <p>En software: componentes reutilizables, librerías open-source y arquitecturas modulares. En moda: materiales recuperados y prendas de segunda vida. El principio es idéntico: maximizar el valor de lo ya creado.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </div>
+          <div class="tl-body">
+            <h5>Reducción de Residuos</h5>
+            <p>Código limpio, eficiente y bien documentado reduce el "código basura" que desperdicia tiempo y energía. Un proyecto ADSO bien estructurado es el equivalente digital de la moda zero-waste.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="tl-body">
+            <h5>Optimización de Recursos</h5>
+            <p>El uso eficiente de servidores, almacenamiento en la nube y consumo energético en data centers es nuestra contribución directa a la reducción del impacto ambiental de la industria tecnológica.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+          </div>
+          <div class="tl-body">
+            <h5>Producción Sostenible</h5>
+            <p>Tecnologías open-source, frameworks con larga vida útil y estándares abiertos como HTML5 garantizan que nuestros productos digitales no se vuelvan obsoletos ni generen dependencia innecesaria.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="tl-body">
+            <h5>Impacto Ambiental Positivo</h5>
+            <p>La digitalización reduce el uso de papel, elimina traslados físicos y democratiza el acceso al conocimiento. GitHub Pages como herramienta de publicación es en sí misma una práctica sostenible.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="tl-body">
+            <h5>Responsabilidad Organizacional</h5>
+            <p>SENA, como institución educativa, y ECCI, como universidad, tienen la responsabilidad de formar profesionales que integren ética ambiental, conciencia social y pensamiento crítico en cada proyecto digital.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARDS DE SOSTENIBILIDAD -->
+<section class="sec">
+  <div class="container">
+    <div class="text-center reveal">
+      <p class="eyebrow">Moda + Tecnología</p>
+      <h2 class="sec-title">¿Qué aprendemos de la moda <em>como desarrolladores</em>?</h2>
+      <div class="gold-rule center"></div>
+    </div>
+    <div class="row g-3 mt-2">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="sustain-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z"/><path d="M7 10l2 2 4-4"/></svg>
+          <h5>Identidad con propósito</h5>
+          <p>Así como cada stand de Moda ECCI tenía una identidad visual coherente, cada aplicación que desarrollamos debe tener una identidad clara, consistente y con un propósito comunicativo definido.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal d1">
+        <div class="sustain-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <h5>Diseño con alma</h5>
+          <p>La conferencia de Sara Viloria nos recordó que el color tiene historia, precio y significado. Del mismo modo, cada decisión de diseño en una interfaz lleva consigo un compromiso ético con el usuario.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal d2">
+        <div class="sustain-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <h5>Construir para durar</h5>
+          <p>La moda sostenible crea prendas que duran, no que se desechan. El desarrollo sostenible crea código mantenible, documentado y escalable que no genera deuda técnica innecesaria.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACORDEÓN: SST y responsabilidad -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5 reveal">
+        <p class="eyebrow">Seguridad y Salud en el Trabajo</p>
+        <h2 class="sec-title">SST en el <em>entorno digital</em></h2>
+        <div class="gold-rule"></div>
+        <p class="sec-lead">
+          La seguridad y salud en el trabajo no solo aplica a fábricas y talleres textiles.
+          En el desarrollo de software, también debemos considerar el bienestar físico y
+          mental de los equipos de trabajo.
+        </p>
+        <!-- Imagen conferencia sobre pigmentos históricos — habla de condiciones de trabajo pasadas -->
+        <div style="overflow:hidden;margin-top:1.5rem;position:relative">
+          <img src="assets/img/Foto_3-Conferencia-Teoria-del-Color.jpeg"
+               alt="Diapositiva histórica sobre pigmentos y su impacto en la salud de trabajadores artesanales"
+               style="width:100%;height:220px;object-fit:cover;object-position:center;filter:brightness(.72);display:block;transition:transform .5s"
+               onmouseover="this.style.transform='scale(1.03)'"
+               onmouseout="this.style.transform='scale(1)'"/>
+          <div style="position:absolute;bottom:.9rem;left:.9rem;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dorado);background:rgba(12,12,12,.78);padding:.25rem .7rem">
+            El precio humano del color en la historia
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 reveal d1">
+        <div class="accordion" id="accSST">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#sst1">
+                Ergonomía y bienestar del desarrollador
+              </button>
+            </h2>
+            <div id="sst1" class="accordion-collapse collapse show" data-bs-parent="#accSST">
+              <div class="accordion-body">
+                El trabajo prolongado frente a pantallas exige buenas prácticas ergonómicas: iluminación
+                adecuada, postura correcta, pausas activas y gestión del estrés. La fatiga visual digital
+                es un riesgo laboral real que todo equipo de desarrollo debe considerar dentro de su
+                política de SST.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sst2">
+                El color como herramienta de bienestar en interfaces
+              </button>
+            </h2>
+            <div id="sst2" class="accordion-collapse collapse" data-bs-parent="#accSST">
+              <div class="accordion-body">
+                Los principios de Moda ECCI se aplican directamente a la SST digital: el contraste de
+                color adecuado reduce la fatiga visual, una paleta armoniosa disminuye el estrés cognitivo,
+                y los colores bien elegidos mejoran la productividad y el estado de ánimo de los usuarios
+                de nuestras aplicaciones.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sst3">
+                Historia: el precio de los pigmentos y los derechos laborales
+              </button>
+            </h2>
+            <div id="sst3" class="accordion-collapse collapse" data-bs-parent="#accSST">
+              <div class="accordion-body">
+                Sara Viloria mencionó que el color tuvo un precio en la historia — incluyendo las
+                condiciones laborales de quienes producían pigmentos como el azul ultramarino o el
+                blanco de plomo. Este recordatorio histórico nos invita a que en el sector tecnológico
+                actual, las condiciones de trabajo sean dignas, seguras y promotoras del bienestar integral.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE FINAL -->
+<section class="sec" style="text-align:center">
+  <div class="container">
+    <div style="max-width:700px;margin:0 auto" class="reveal">
+      <p class="eyebrow">Conclusión Final</p>
+      <h2 class="sec-title">Un evento que <em>transforma</em> la mirada del programador</h2>
+      <div class="gold-rule center"></div>
+      <p class="sec-lead mb-4">
+        Moda ECCI 2026 demostró que los mejores desarrolladores de software no son solo
+        técnicos: son comunicadores visuales, pensadores críticos y ciudadanos responsables
+        que entienden el impacto de cada decisión de diseño en el mundo real.
+      </p>
+      <p class="sec-lead mb-5">
+        Al finalizar este recorrido, me llevo no solo conocimientos sobre teoría del color
+        o semiología visual: me llevo la certeza de que la creatividad, la sostenibilidad
+        y la ética son competencias tan importantes como el código mismo.
+      </p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="index.html" class="btn-outline-gold">← Volver al Inicio</a>
+        <a href="experiencia.html" class="btn-fill-gold">Ver Mi Experiencia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">Moda <span>ECCI</span></div>
+        <p class="footer-text mt-2">Actividad académica — SENA ADSO · Regional Distrito Capital · 2026</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <p class="footer-heading">Páginas</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="experiencia.html">Experiencia</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="bilingue.html">Bilingüe</a></li>
+          <li><a href="glosario.html">Glossary</a></li>
+          <li><a href="sostenibilidad.html">Sostenibilidad</a></li>
+          <li><a href="referencias.html">Referencias</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <p class="footer-heading">Tecnologías del Proyecto</p>
+        <p style="font-size:.82rem;color:var(--texto-sec);line-height:1.8">
+          HTML5 · CSS3 · JavaScript ES6+ · Bootstrap 5.3 · GitHub Pages<br>
+          Google Fonts: Cormorant Garamond · Inter
+        </p>
+        <p style="font-size:.75rem;color:var(--texto-sec);margin-top:.5rem">
+          SENA — Centro de Manufactura en Textil y Cuero · Regional Distrito Capital
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">SENA ADSO · Moda ECCI · Bogotá, Colombia · 2026</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/translate.js"></script>
+</body>
+</html>

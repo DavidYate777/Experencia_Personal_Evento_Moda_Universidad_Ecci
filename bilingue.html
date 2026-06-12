@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contenido Bilingüe — Moda ECCI 2026</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <style>
+    .lang-toggle-wrap { display:flex; gap:.5rem; margin-bottom:2rem; }
+    .lang-btn {
+      background:transparent; border:1px solid rgba(201,168,76,.28);
+      color:var(--texto-sec); font-size:.68rem; letter-spacing:.2em;
+      text-transform:uppercase; padding:.45rem 1.2rem; cursor:pointer; transition:all .2s;
+    }
+    .lang-btn.active,
+    .lang-btn:hover { border-color:var(--dorado); color:var(--dorado); }
+    .lang-col { transition:opacity .3s; }
+    .lang-col.hidden { opacity:.25; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Moda <span>ECCI</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="experiencia.html">Experiencia</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link active" href="bilingue.html">Bilingüe</a></li>
+        <li class="nav-item"><a class="nav-link" href="glosario.html">Glossary</a></li>
+        <li class="nav-item"><a class="nav-link" href="sostenibilidad.html">Sostenibilidad</a></li>
+        <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — foto del moodboard colorido de Paul Klee, ideal para bilingüe/comunicación -->
+<section class="page-hero hero-sm">
+  <div class="hero-bg-img"
+       style="background-image:url('assets/img/Foto_2-Conferencia-Teoria-del-Color.jpeg');
+              background-position:center;"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Bilingual Content · 2026</p>
+    <h1 class="hero-title">Contenido <em>Bilingüe</em></h1>
+    <p class="hero-sub">Español · English — Conferencias & Stands</p>
+  </div>
+</section>
+
+<!-- ALERT BILINGÜE -->
+<div class="container mt-5 reveal">
+  <div class="alert-moda p-3">
+    ✦ &nbsp; Toda la información sobre las conferencias está presentada en <strong>español</strong> e
+    <strong>inglés</strong> para fortalecer competencias de escritura técnica bilingüe.
+  </div>
+</div>
+
+<!-- TOGGLE DE IDIOMA -->
+<section class="sec" style="padding-top:3rem">
+  <div class="container">
+
+    <div class="lang-toggle-wrap reveal">
+      <button class="lang-btn active" id="btnBoth">Ambos idiomas</button>
+      <button class="lang-btn" id="btnES">Solo Español</button>
+      <button class="lang-btn" id="btnEN">Solo English</button>
+    </div>
+
+    <!-- ── BLOQUE 1: Conferencia ────────────────────────────── -->
+    <div class="mb-2 reveal">
+      <p style="font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado);margin-bottom:1rem">
+        01 — Conferencia Principal
+      </p>
+      <div class="bilingual-wrap">
+        <div class="bilingual-col lang-col" id="es1">
+          <div class="bilingual-lang">Español</div>
+          <h4>Traigamos el Color de Vuelta</h4>
+          <p>
+            En esta conferencia tuvimos la oportunidad de estar con la profesional e influencer
+            Sara Emanuel Viloria, quien nos introdujo tanto a la explicación sobre la teoría del
+            color como a la historia de los personajes que introdujeron estos términos a esta gran
+            materia de conceptos e ideas que nacen a partir del color mismo.
+          </p>
+          <p style="margin-top:.9rem">
+            Es increíble pensar cómo personajes históricos como Newton y J.M.W. Turner, tanto a
+            nivel profesional como científico, introdujeron una rama de explicaciones enfocadas en
+            darle sentido a lo que percibimos a través de nuestros ojos. Ver cómo el color, más
+            que ser un término vago y vacío, se desglosa a través de nuestra vida personal; ver
+            cómo puede hacernos sentir felices, tristes, angustiados o incluso convertirse en un
+            sentido de identidad para un país, una vida o un recuerdo.
+          </p>
+          <p style="margin-top:.9rem">
+            Pero como todo, el color a lo largo de la historia ha tenido un precio y unas
+            implicaciones que han jugado papeles fundamentales a lo largo de la vida humana,
+            y hoy en día con el desarrollo de las mejores tecnologías se está perdiendo esa
+            originalidad que caracterizaba el color mismo.
+          </p>
+          <p style="margin-top:.9rem">
+            Esta conferencia me pareció de carácter fundamental en mi desarrollo como futuro
+            programador, porque nos permite analizar más allá de una pantalla, volver a la
+            realidad humana y entender cómo estos mismos conceptos pueden aplicarse en la era
+            digital sin perder originalidad y compromiso ético.
+          </p>
+        </div>
+        <div class="bilingual-col lang-col" id="en1">
+          <div class="bilingual-lang">English</div>
+          <h4>Let's Bring Color Back</h4>
+          <p>
+            In this conference, we had the opportunity to be with professional and influencer
+            Sara Emanuel Viloria, who introduced us to both the explanation of color theory and
+            the history of the figures who introduced these concepts into this vast field of
+            ideas born from color itself.
+          </p>
+          <p style="margin-top:.9rem">
+            It is remarkable to consider how historical figures such as Newton and J.M.W. Turner,
+            both at professional and scientific levels, introduced a branch of explanations focused
+            on making sense of what we perceive through our eyes. To see how color, rather than
+            being a vague and empty term, unfolds through our personal lives — how it can make us
+            feel happy, sad, anxious, or even become a sense of identity for a country, a life,
+            or a memory.
+          </p>
+          <p style="margin-top:.9rem">
+            But like everything, color throughout history has had a price and implications that
+            have played fundamental roles in human life. Today, with the development of modern
+            technologies, the originality that once characterized color itself is being lost.
+          </p>
+          <p style="margin-top:.9rem">
+            This conference was of fundamental importance to my development as a future programmer,
+            because it allows us to analyze beyond a screen, return to human reality, and understand
+            how these same concepts can be applied in the digital age without losing originality
+            and ethical commitment.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BLOQUE 2: Stands ─────────────────────────────────── -->
+    <div class="mt-4 reveal">
+      <p style="font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado);margin-bottom:1rem">
+        02 — Experiencia en los Stands
+      </p>
+      <div class="bilingual-wrap">
+        <div class="bilingual-col lang-col" id="es2">
+          <div class="bilingual-lang">Español</div>
+          <h4>Stands de Moda — Identidad Visual Aplicada</h4>
+          <p>
+            Desde la entrada de la Universidad ECCI me llamó demasiado la atención la cantidad
+            de esfuerzo y dedicación de los stands de moda que se presentaron. Fue increíble ver
+            plasmada una gama de colores y representaciones tanto de la moda actual como de la
+            moda antigua.
+          </p>
+          <p style="margin-top:.9rem">
+            Supieron darle una identidad a cada stand, mostrándonos cómo la moda también hace
+            parte de la cotidianidad y que cada uno vive su sentido de identidad a través de los
+            colores y las prendas de vestir que lleva en su cuerpo, en su habitación o en su vida
+            diaria.
+          </p>
+          <p style="margin-top:.9rem">
+            La rama de la programación se ve fortalecida a través de estos stands que nos brindan
+            explicaciones únicas. Nosotros como futuros desarrolladores tenemos que incluir nuestro
+            sentido de creatividad y pertenencia en las aplicaciones o entornos que realizamos,
+            generando una identidad que nace a partir de nuestro pensamiento y relación con términos
+            como la teoría del color, la creatividad e incluso el dibujo.
+          </p>
+        </div>
+        <div class="bilingual-col lang-col" id="en2">
+          <div class="bilingual-lang">English</div>
+          <h4>Fashion Stands — Applied Visual Identity</h4>
+          <p>
+            From the moment I entered Universidad ECCI, I was deeply struck by the amount of
+            effort and dedication displayed in the fashion stands. It was incredible to see such
+            a range of colors and representations from both contemporary and historical fashion.
+          </p>
+          <p style="margin-top:.9rem">
+            Each stand had a distinct identity of its own, showing us how fashion is also part
+            of everyday life and that each person expresses their sense of identity through the
+            colors and garments they wear on their body, display in their room, or incorporate
+            into their daily life.
+          </p>
+          <p style="margin-top:.9rem">
+            The field of programming is strengthened through these stands, which offer unique
+            and powerful insights. As future developers, we must incorporate our own sense of
+            creativity and belonging into the applications and environments we build — generating
+            an identity rooted in our thinking and our relationship with concepts like color
+            theory, creativity, and even drawing.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BLOQUE 3: Conclusión bilingüe ───────────────────── -->
+    <div class="mt-4 reveal">
+      <p style="font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dorado);margin-bottom:1rem">
+        03 — Reflexión Final
+      </p>
+      <div class="bilingual-wrap">
+        <div class="bilingual-col lang-col" id="es3">
+          <div class="bilingual-lang">Español</div>
+          <h4>Color, Tecnología y Formación Profesional</h4>
+          <p>
+            La experiencia en Moda ECCI 2026 me demostró que la formación de un desarrollador
+            de software no se limita al código. La creatividad, la sensibilidad visual y la
+            comprensión de cómo el color afecta las emociones humanas son competencias que
+            enriquecen cada proyecto digital.
+          </p>
+          <p style="margin-top:.9rem">
+            Al aplicar los principios de la teoría del color al diseño de interfaces, no solo
+            hacemos aplicaciones más atractivas: las hacemos más humanas, más accesibles y más
+            capaces de conectar emocionalmente con el usuario. Ese es el verdadero legado de
+            eventos como Moda ECCI.
+          </p>
+        </div>
+        <div class="bilingual-col lang-col" id="en3">
+          <div class="bilingual-lang">English</div>
+          <h4>Color, Technology and Professional Growth</h4>
+          <p>
+            The Moda ECCI 2026 experience showed me that training as a software developer goes
+            far beyond writing code. Creativity, visual sensitivity, and an understanding of
+            how color affects human emotions are competencies that enrich every digital project.
+          </p>
+          <p style="margin-top:.9rem">
+            By applying color theory principles to interface design, we do not just make
+            applications more attractive — we make them more human, more accessible, and more
+            capable of emotionally connecting with the user. That is the true legacy of events
+            like Moda ECCI.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL — Nota sobre traducción -->
+<div class="text-center py-3">
+  <button class="btn-outline-gold" data-bs-toggle="modal" data-bs-target="#modalTraduccion">
+    Nota sobre las traducciones
+  </button>
+</div>
+
+<div class="modal fade" id="modalTraduccion" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sobre las traducciones</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Todas las traducciones al inglés presentadas en esta página fueron realizadas de forma
+          manual, priorizando la fidelidad al sentido original y el uso de lenguaje técnico-académico
+          apropiado para el contexto del evento y el programa ADSO.
+        </p>
+        <p>
+          Se evitó la traducción literal para preservar el tono reflexivo y personal del texto
+          original en español, adaptándolo al registro formal del inglés académico.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-outline-gold" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">Moda <span>ECCI</span></div>
+        <p class="footer-text mt-2">Actividad académica — SENA ADSO · Regional Distrito Capital · 2026</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <p class="footer-heading">Páginas</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="experiencia.html">Experiencia</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="bilingue.html">Bilingüe</a></li>
+          <li><a href="glosario.html">Glossary</a></li>
+          <li><a href="sostenibilidad.html">Sostenibilidad</a></li>
+          <li><a href="referencias.html">Referencias</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <p class="footer-heading">Siguiente sección</p>
+        <p style="font-size:.88rem;color:var(--texto-sec);margin-bottom:1rem">
+          Explora el glosario técnico con más de 18 términos en inglés aprendidos durante el evento.
+        </p>
+        <a href="glosario.html" class="btn-outline-gold">Ver Glossary →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">SENA ADSO · Moda ECCI · Bogotá, Colombia · 2026</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/translate.js"></script>
+<script>
+  /* ── Toggle de idioma ─────────────────────────── */
+  const cols = { es: ['es1','es2','es3'], en: ['en1','en2','en3'] };
+
+  function setLang(mode) {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('btn' + mode.charAt(0).toUpperCase() + mode.slice(1))?.classList.add('active');
+
+    cols.es.forEach(id => document.getElementById(id)?.classList.toggle('hidden', mode === 'en'));
+    cols.en.forEach(id => document.getElementById(id)?.classList.toggle('hidden', mode === 'es'));
+  }
+
+  document.getElementById('btnBoth').addEventListener('click', () => setLang('both'));
+  document.getElementById('btnES').addEventListener('click',   () => setLang('es'));
+  document.getElementById('btnEN').addEventListener('click',   () => setLang('en'));
+</script>
+</body>
+</html>
